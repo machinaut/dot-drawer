@@ -30,12 +30,12 @@ white = PIL.ImageColor.getcolor('white', 'RGB')
 black = PIL.ImageColor.getcolor('black', 'RGB')
 
 im = PIL.Image.new('RGB', size, white)
-w = PIL.Image.open('worldmap6.png')
+w = PIL.Image.open('transformedworld6.png')
 draw = PIL.ImageDraw.Draw(im)
 
-for x in range(1,48):
-    for y in range(1,24):
-        r = int(getcolor(w,x,y))
+for x in range(1,47):
+    for y in range(1,23):
+        r = int(round(getcolor(w,x-1,y-1)))
         x1 = (x * 20) - (r / 2)
         x2 = (x * 20) + (r / 2)
         y1 = (y * 20) - (r / 2)
